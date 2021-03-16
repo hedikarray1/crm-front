@@ -47,3 +47,9 @@
   }
 }
 
+:root {
+  --color-white: white;
+  --color-solid: black;
+  --color-primary: #008ecc;
+  --color-primary-light: #008ecc59;
+}

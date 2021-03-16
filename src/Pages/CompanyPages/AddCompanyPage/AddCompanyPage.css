@@ -1,4 +1,6 @@
 .form-content {
+  display: flex;
+  flex-direction: column;
   width: 98%;
   padding: 20px;
   justify-content: center;
@@ -13,4 +15,13 @@
   font-size: 2em;
   font-weight: 600;
   color: var(--color-primary);
+}
+
+.input {
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.dropzonearea {
+  height: 50px;
 }
