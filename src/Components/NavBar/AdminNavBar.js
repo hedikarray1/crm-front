@@ -5,6 +5,7 @@ import * as IoiIcons from "react-icons/io";
 import * as GiIcons from "react-icons/gi";
 import AddClient from "../../Pages/AdminPages/CLientsManagment/AddClient/AddClient";
 import Login from "../../Pages/Login";
+import UserTopNav from "../UserTopNav/UserTopNav";
 import AllCompanyPage from "../../Pages/CompanyPages/AllCompanyPage/AllCompanyPage";
 import AddCompanyPage from "../../Pages/CompanyPages/AddCompanyPage/AddCompanyPage";
 function AdminNavBar() {
@@ -25,37 +26,39 @@ function AdminNavBar() {
             }}
           ></IoiIcons.IoIosMenu>
         </Link>
+        <UserTopNav></UserTopNav>
       </div>
 
       <nav className={AdminSideBar ? "nav-menu active" : "nav-menu"}>
-        <ul>
+        <ul className="menu-bars-ul">
           <li className="menu-bars-item">
             <Link to="/home/addClient" className="menu-bars">
-              <GiIcons.GiFactory />
-              <span>addClient</span>
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>Clients</span>
             </Link>
           </li>
-          <li className="menu-bars-item">
-            <Link to="/home/login" className="menu-bars">
-              <GiIcons.GiFactory />
-              <span>login</span>
-            </Link>
-          </li>
-
           <li className="menu-bars-item">
             <Link to="/home/AllCompany" className="menu-bars">
-              <GiIcons.GiFactory />
-              <span>Gestion des sociétés</span>
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>Sociétés</span>
             </Link>
           </li>
           <li className="menu-bars-item">
             <Link to="/home/AddCompanyPage" className="menu-bars">
-              <GiIcons.GiFactory />
-              <span>ajouter une sociétés</span>
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>add Sociétés</span>
+            </Link>
+          </li>
+
+          <li className="menu-bars-item">
+            <Link to="/home/login" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />{" "}
+              <span>login</span>
             </Link>
           </li>
         </ul>
       </nav>
+
       <div
         className={AdminSideBar ? "pages-content" : "pages-content hiddenslide"}
       >
