@@ -1,0 +1,18 @@
+.form-content{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+   padding: 20px;
+    justify-content: center;
+   align-self: center;
+    background-color:white;
+    z-index: 5px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px #0000006d;
+}
+
+.form-content>p{
+    font-size: 2em;
+    font-weight: 600;
+    color: teal;
+}
