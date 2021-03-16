@@ -1,0 +1,75 @@
+.account-component{
+    min-width: 150px;
+    width: 10vw;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.account-picture{
+    width: 3vw;
+    min-width: 50px;
+    border-radius: 100%;
+    min-height: 50px;
+    background-color: teal;
+    height: 3vw;
+}
+.drop-down{
+    position: absolute;
+    top: 90px;
+    right: 2vw;
+    width: 180px;
+   
+    z-index: 200;
+    background-color: rgb(255, 255, 255);
+    transition: 1000ms;
+    padding: 10px;
+    border-radius: 10px;
+ 
+   box-shadow:  2px 4px 10px 1px #00000014;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: flex-start;
+  
+}
+.drop-down.hidden{
+    display: none;
+    transition: 1000ms;
+
+
+  
+}
+.drop-down-choices{
+    list-style-type: none; 
+    font-weight: 500;
+    margin-top: 5px;
+    text-align: start;
+
+
+}
+.drop-down-choices.big{
+    width: 100%;
+    padding-top: 3px;
+    border-top: rgb(138, 138, 138);
+    border-top-width: 1px;
+    border-top-style: solid;
+    list-style-type: none; 
+    font-weight: 600;
+    
+    margin-top: 5px;
+    text-align: start;
+
+
+}
+.username{
+    color: rgb(128, 128, 128);
+}
+.user-picture{
+width: 100%;
+height: 100%;
+border-radius: 100%;
+}
