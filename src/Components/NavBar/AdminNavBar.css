@@ -12,11 +12,11 @@
    
 
 }
-.toggle_menu_sidebar{
-    color: #4d4d4d;
-position: relative;
-margin-left: 20px;
-align-self: flex-start; 
+.toggle_menu_sidebar {
+  color: #4d4d4d;
+  position: relative;
+  margin-left: 20px;
+  align-self: flex-start;
 }
 
 .menu-bars{

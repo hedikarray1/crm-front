@@ -1,12 +1,12 @@
-import React from 'react'
-import AdminNavBar from '../../../Components/NavBar/AdminNavBar'
+import React from "react";
+import AdminNavBar from "../../../Components/NavBar/AdminNavBar";
 
 function Home() {
-    return (
-        <div>
-           <AdminNavBar/> 
-        </div>
-    )
+  return (
+    <div>
+      <AdminNavBar />
+    </div>
+  );
 }
 
-export default Home
+export default Home;
