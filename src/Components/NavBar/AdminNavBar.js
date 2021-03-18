@@ -8,6 +8,8 @@ import Login from "../../Pages/Login";
 import UserTopNav from "../UserTopNav/UserTopNav";
 import AllCompanyPage from "../../Pages/CompanyPages/AllCompanyPage/AllCompanyPage";
 import AddCompanyPage from "../../Pages/CompanyPages/AddCompanyPage/AddCompanyPage";
+import AddFeaturePage from "../../Pages/FeaturePages/AddFeaturePage/AddFeaturePage";
+import AddPack from "../../Pages/PackPages/AddPack/AddPack";
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
   const showSideBar = () => {
@@ -51,6 +53,20 @@ function AdminNavBar() {
           </li>
 
           <li className="menu-bars-item">
+            <Link to="/home/AddFeaturePage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AddFeaturePage</span>
+            </Link>
+          </li>
+
+          <li className="menu-bars-item">
+            <Link to="/home/AddPack" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AddPack</span>
+            </Link>
+          </li>
+
+          <li className="menu-bars-item">
             <Link to="/home/login" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />{" "}
               <span>login</span>
@@ -67,6 +83,8 @@ function AdminNavBar() {
           <Route path="/home/login" component={Login}></Route>
           <Route path="/home/AllCompany" component={AllCompanyPage}></Route>
           <Route path="/home/AddCompanyPage" component={AddCompanyPage}></Route>
+          <Route path="/home/AddFeaturePage" component={AddFeaturePage}></Route>
+          <Route path="/home/AddPack" component={AddPack}></Route>
         </Switch>
       </div>
     </div>

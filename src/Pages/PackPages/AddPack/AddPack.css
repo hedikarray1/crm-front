@@ -1,0 +1,41 @@
+.form-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background-color: white;
+  z-index: 5px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px #0000006d;
+}
+
+.form-content > p {
+  font-size: 2em;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.button {
+  border-radius: 20px;
+  background-color: var(--color-primary);
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  border: none;
+  margin-top: 30px;
+  box-shadow: 2px 3px 5px #00000046;
+  height: 50px;
+  align-self: flex-end;
+  width: fit-content;
+  padding: 5px 5%;
+}
+
+.no-margin {
+  margin: auto;
+  padding: auto;
+  align-self: center;
+}
