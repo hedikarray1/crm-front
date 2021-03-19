@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import FormAdd from "../../../Components/forms/FormAdd";
 
 const groupeTitles = [
   "gestion user",
@@ -19,8 +20,7 @@ export default function AddFeaturePage(props) {
   };
 
   return (
-    <form className={widh} onSubmit={console.log("feature jouter :", feature)}>
-      <p>Ajouter une fonctionnalité</p>
+    <FormAdd Title="Ajout d'une fonctionnalité" className="col-md-6">
       <div>
         <TextField
           id="title"
@@ -99,6 +99,6 @@ export default function AddFeaturePage(props) {
           ajouter
         </button>
       </div>
-    </form>
+    </FormAdd>
   );
 }

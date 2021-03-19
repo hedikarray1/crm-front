@@ -1,12 +1,11 @@
 import React from "react";
 import "./FormAdd.css";
 function FormAdd(props) {
+  const className = "form-content " + props.className;
   return (
-    <div className="form-content">
+    <div className={className}>
       <p>{props.Title}</p>
-      {props.FormContent.map((item, index) => {
-        return item;
-      })}
+      {props.children}
     </div>
   );
 }
