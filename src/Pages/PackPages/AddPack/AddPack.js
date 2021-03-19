@@ -9,6 +9,8 @@ import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import { CustomFormButton } from "../../../Components/Buttons/CustomButton";
+import FormAdd from "../../../Components/forms/FormAdd";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -16,29 +18,29 @@ const checkedIcon = <CheckBoxIcon fontSize="small" />;
 const groupeTitles = [
   {
     title: "gestion user",
-    fonctionallité: [
-      { title: "add user", checked: false },
+    features: [
+      { title: "add user", checked: true },
       { title: "edit user", checked: false },
       { title: "all user", checked: false },
     ],
   },
   {
     title: "gestion produit",
-    fonctionallité: [
+    features: [
       { title: "add produit", checked: false },
       { title: "edit produit", checked: false },
     ],
   },
   {
     title: "gestion commande",
-    fonctionallité: [
+    features: [
       { title: "all commande", checked: false },
       { title: "add commande", checked: false },
     ],
   },
   {
     title: "gestion stock",
-    fonctionallité: [
+    features: [
       { title: "add stock", checked: false },
       { title: "edit stock", checked: false },
     ],
@@ -47,8 +49,7 @@ const groupeTitles = [
 
 export default function AddPack() {
   const [pack, setPack] = useState({});
-  const [feature, setFeature] = useState([]);
-  const widh = "col-md-6 form-content";
+  const [features, setFeatures] = useState([]);
 
   const onChange = (attribute, value) => {
     let pack1 = pack;
@@ -56,14 +57,21 @@ export default function AddPack() {
     setPack(pack1);
   };
 
-  const onChangeFeature = (event, value) => {
-    setFeature(value);
-    console.log("onChangeFeature :", feature);
+  const handleChangeFeature = (event, index1, index2) => {
+    console.log(
+      " handleChangeFeature : name:",
+      event.target.name,
+      " checked :",
+      event.target.checked
+    );
+    console.log("feature modifier :", features[index1].features[index2]);
+    let features1 = features;
+    features1[index1].features[index2].checked = event.target.checked;
+    setFeatures(features1);
   };
 
   return (
-    <form className={widh} onSubmit={console.log("pack ajouter :", pack)}>
-      <p>Ajouter un pack</p>
+    <FormAdd Title="Ajout d'un pack" className="col-md-6">
       <div>
         <TextField
           id="title"
@@ -99,9 +107,10 @@ export default function AddPack() {
           multiple
           id="checkboxes-tags-demo"
           options={groupeTitles}
-          onInputChange={onChangeFeature}
-          value={feature}
-          disableCloseOnSelect
+          onChange={(event, value) => {
+            setFeatures(value);
+            console.log("Autocomplete :", value);
+          }}
           getOptionLabel={(option) => option.title}
           renderOption={(option, { selected }) => (
             <React.Fragment>
@@ -126,48 +135,37 @@ export default function AddPack() {
           )}
         />
       </div>
-      {/*    <div>
-        <FormControl component="fieldset" className={classes.formControl}>
-          <FormLabel component="legend">Assign responsibility</FormLabel>
-          <FormGroup>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={gilad}
-                  onChange={handleChange}
-                  name="gilad"
-                />
-              }
-              label="Gilad Gray"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={jason}
-                  onChange={handleChange}
-                  name="jason"
-                />
-              }
-              label="Jason Killian"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={antoine}
-                  onChange={handleChange}
-                  name="antoine"
-                />
-              }
-              label="Antoine Llorca"
-            />
-          </FormGroup>
-        </FormControl>
-      </div>
-            */}
+
+      {features.map((feature, index1) => {
+        return (
+          <div>
+            <FormLabel component="legend">{feature.title}</FormLabel>
+            <FormGroup row>
+              {feature.features.map((fea, index2) => {
+                return (
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        //checked={fea.checked}
+                        value={fea.checked}
+                        onChange={(event) => {
+                          handleChangeFeature(event, index1, index2);
+                        }}
+                        name={fea.title}
+                      />
+                    }
+                    label={fea.title}
+                  />
+                );
+              })}
+            </FormGroup>
+          </div>
+        );
+      })}
       <div>
         <TextField
           required
-          id="title"
+          id="prix"
           style={{ width: "100%" }}
           variant="outlined"
           label="Prix"
@@ -175,22 +173,21 @@ export default function AddPack() {
           type="number"
           margin="normal"
           onChange={(event) => {
-            onChange("title", event.target.value);
+            onChange("prix", event.target.value);
           }}
         />
       </div>
+
       <div>
-        <button
-          type="submit"
-          style={{ width: "70%" }}
-          className="button"
+        <CustomFormButton
+          value="Ajouter"
+          width="50%"
           onClick={() => {
-            console.log("pack jouter :", pack);
+            console.log("clicked pack jouter : ", pack);
+            console.log("clicked feature: ", features);
           }}
-        >
-          ajouter
-        </button>
+        ></CustomFormButton>
       </div>
-    </form>
+    </FormAdd>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CustomButton from "../../../../Components/Buttons/CustomButton";
+import { CustomButton } from "../../../../Components/Buttons/CustomButton";
 import FormAdd from "../../../../Components/forms/FormAdd";
 import CustomformInput from "../../../../Components/Inputs/Inputs";
 import "./AddClient.css";
@@ -11,46 +11,43 @@ function AddClient() {
     client1[attribute] = value;
     setClient(client1);
   };
-  let FormContent = [
-    <CustomformInput
-      label="nom"
-      value={client.firstname}
-      type="text"
-      placeholder="hedi"
-      onChange={(value) => {
-        onChange("firstname", value);
-      }}
-    ></CustomformInput>,
-    <CustomformInput
-      label="nom"
-      value={client.firstname}
-      type="text"
-      placeholder="hedi"
-      onChange={(value) => {
-        onChange("firstname", value);
-      }}
-    ></CustomformInput>,
-    <CustomformInput
-      label="nom"
-      value={client.firstname}
-      type="text"
-      placeholder="hedi"
-      onChange={(value) => {
-        onChange("firstname", value);
-      }}
-    ></CustomformInput>,
-    <CustomButton
-      value="Ajouter"
-      onClick={() => {
-        alert("clicked");
-      }}
-    ></CustomButton>,
-  ];
 
   return (
-    <>
-      <FormAdd Title="Ajout d'un client" FormContent={FormContent}></FormAdd>
-    </>
+    <FormAdd Title="Ajout d'un client" className="col-md-6">
+      <CustomformInput
+        label="nom"
+        value={client.firstname}
+        type="text"
+        placeholder="hedi"
+        onChange={(value) => {
+          onChange("firstname", value);
+        }}
+      ></CustomformInput>
+      <CustomformInput
+        label="nom"
+        value={client.firstname}
+        type="text"
+        placeholder="hedi"
+        onChange={(value) => {
+          onChange("firstname", value);
+        }}
+      ></CustomformInput>
+      <CustomformInput
+        label="nom"
+        value={client.firstname}
+        type="text"
+        placeholder="hedi"
+        onChange={(value) => {
+          onChange("firstname", value);
+        }}
+      ></CustomformInput>
+      <CustomButton
+        value="Ajouter"
+        onClick={() => {
+          alert("clicked");
+        }}
+      ></CustomButton>
+    </FormAdd>
   );
 }
 
