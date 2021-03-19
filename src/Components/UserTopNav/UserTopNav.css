@@ -54,9 +54,7 @@
 .drop-down-choices.big{
     width: 100%;
     padding-top: 3px;
-    border-top: rgb(138, 138, 138);
-    border-top-width: 1px;
-    border-top-style: solid;
+   
     list-style-type: none; 
     font-weight: 600;
     
