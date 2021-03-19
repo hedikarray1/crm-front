@@ -1,12 +1,24 @@
 import React from "react";
+import { connect } from "react-redux";
 import AdminNavBar from "../../../Components/NavBar/AdminNavBar";
+import NotFound from "../../NotFoundPage/NotFound";
 
-function Home() {
+function Home(props) {
+ 
   return (
     <div>
-      <AdminNavBar />
+  {props.Auth.isLoggedIn?  <AdminNavBar />:<NotFound></NotFound>}     
     </div>
   );
 }
 
-export default Home;
+
+
+const mapStateToProps = (state) => {
+ return state;
+};
+
+
+export default connect(mapStateToProps)(Home);
+
+

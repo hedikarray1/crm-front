@@ -1,0 +1,45 @@
+.my-page-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.background-picture{
+    position: fixed;
+    left: 0px;
+    z-index: 0;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+.logo-picture{
+    position: fixed;
+    left: 30px;
+    top: 20px;
+    width: 8vw;
+    height: 8vw;
+}
+.not-found-number{
+color: white;
+font-weight: 900;
+font-size: 17em;
+z-index: 10;
+
+
+}
+
+.not-found-description{
+    margin-top: -30px;
+    color: white;
+font-weight:500;
+font-size: 2em;
+z-index: 10;
+}
+.button-to-redirect{
+    width: 20vw;
+height: 20vw;
+background-color: teal;
+}
