@@ -118,7 +118,6 @@ align-self: flex-start;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: white;
     border-left-width: 3px;
     border-left-style: solid;
     border-left-color: rgb(26, 0, 93);
