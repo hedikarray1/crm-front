@@ -12,11 +12,11 @@
    
 
 }
-.toggle_menu_sidebar {
-  color: #4d4d4d;
-  position: relative;
-  margin-left: 20px;
-  align-self: flex-start;
+.toggle_menu_sidebar{
+    color: #4d4d4d;
+position: relative;
+margin-left: 20px;
+align-self: flex-start; 
 }
 
 .menu-bars{
@@ -69,7 +69,7 @@
     
 }
 .pages-content{
-    position: fixed;
+    position: absolute;
    width: calc(100% - 100px);
    background: rgb(251, 251, 251);
    min-height: calc(100vh - 100px);
@@ -84,12 +84,12 @@
 }
 
 .pages-content.hiddenslide{
-    position: fixed;
+    position: absolute;
     left:0px;
     top: 100px;
     width: 100%;
     background: rgb(251, 251, 251);
-    height: 100vh;
+    min-height: calc(100vh - 100px);
     transition: 305ms;
     display: flex;
     flex-direction: column;
