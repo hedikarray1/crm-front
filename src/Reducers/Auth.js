@@ -5,7 +5,9 @@ import * as ActionTypes from "../Actions/index"
 
 const authtate={
     isLoggedIn:false,
-    user:{Authorization:localStorage.getItem("Authorization")}
+    Authorization:localStorage.getItem("Authorization"),
+ current_user:null,
+ loading:false
 }
 
 
@@ -22,12 +24,13 @@ export default function Auth(state=authtate,action={}){
           case ActionTypes.LOGIN_SUCCESS:
           localStorage.setItem("Authorization",action.payload.authorization)
           return {
-                user:{...state.user,Authorization:action.payload.authorization},
+               
+            ...state,
+            Authorization:action.payload.authorization,
+            loading: false,
+            isLoggedIn:true,
 
-                loading: false,
-                isLoggedIn:true,
-
-                errors: action.error ? action.payload.errors : null
+            errors: action.error ? action.payload.errors : null
               };
               case ActionTypes.LOGIN_FAILURE:
                 return {
@@ -40,7 +43,8 @@ export default function Auth(state=authtate,action={}){
                   case ActionTypes.GET_CURRENT_USER_SUCCESS:
                   
                     return {
-                          user:{...state,current_user:action.payload},
+                        ... state,
+                        current_user:action.payload,
           
                           loading: false,
                           isLoggedIn:true,
