@@ -10,6 +10,8 @@ import AllCompanyPage from "../../Pages/CompanyPages/AllCompanyPage/AllCompanyPa
 import AddCompanyPage from "../../Pages/CompanyPages/AddCompanyPage/AddCompanyPage";
 import AddFeaturePage from "../../Pages/FeaturePages/AddFeaturePage/AddFeaturePage";
 import AddPack from "../../Pages/PackPages/AddPack/AddPack";
+import AddLicencePage from "../../Pages/LicencePages/AddLicencePage/AddLicencePage";
+import AllFeaturePage from "../../Pages/FeaturePages/AllFeaturePage/AllFeaturePage";
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
   const showSideBar = () => {
@@ -39,6 +41,14 @@ function AdminNavBar() {
               <span>Clients</span>
             </Link>
           </li>
+
+          <li className="menu-bars-item">
+            <Link to="/home/AllFeaturePage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AllFeaturePage</span>
+            </Link>
+          </li>
+
           <li className="menu-bars-item">
             <Link to="/home/AllCompany" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
@@ -67,6 +77,13 @@ function AdminNavBar() {
           </li>
 
           <li className="menu-bars-item">
+            <Link to="/home/AddLicencePage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AddLicencePage</span>
+            </Link>
+          </li>
+
+          <li className="menu-bars-item">
             <Link to="/home/login" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />{" "}
               <span>login</span>
@@ -85,6 +102,8 @@ function AdminNavBar() {
           <Route path="/home/AddCompanyPage" component={AddCompanyPage}></Route>
           <Route path="/home/AddFeaturePage" component={AddFeaturePage}></Route>
           <Route path="/home/AddPack" component={AddPack}></Route>
+          <Route path="/home/AddLicencePage" component={AddLicencePage}></Route>
+          <Route path="/home/AllFeaturePage" component={AllFeaturePage}></Route>
         </Switch>
       </div>
     </div>
