@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField } from "@material-ui/core";
+import { Switch, TextField } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 
 import Checkbox from "@material-ui/core/Checkbox";
@@ -19,23 +19,23 @@ const groupeTitles = [
   {
     title: "gestion user",
     features: [
-      { title: "add user", checked: true },
-      { title: "edit user", checked: false },
-      { title: "all user", checked: false },
+      { title: "add user", checked: true, price: 1 },
+      { title: "edit user", checked: false, price: 2 },
+      { title: "all user", checked: false, price: 3 },
     ],
   },
   {
     title: "gestion produit",
     features: [
-      { title: "add produit", checked: false },
-      { title: "edit produit", checked: false },
+      { title: "add produit", checked: false, price: 4 },
+      { title: "edit produit", checked: false, price: 5 },
     ],
   },
   {
     title: "gestion commande",
     features: [
-      { title: "all commande", checked: false },
-      { title: "add commande", checked: false },
+      { title: "all commande", checked: false, price: 6 },
+      { title: "add commande", checked: false, price: 7 },
     ],
   },
   {
@@ -68,6 +68,28 @@ export default function AddPack() {
     let features1 = features;
     features1[index1].features[index2].checked = event.target.checked;
     setFeatures(features1);
+    /* let pack1 = pack;
+    if (features1[index1].features[index2].checked) {
+      pack1.price = pack1.price + features1[index1].features[index2].price;
+    } else {
+      pack1.price = pack1.price - features1[index1].features[index2].price;
+    }
+    setPack(pack1);*/
+  };
+
+  const add = () => {
+    let fea = [];
+    features.forEach((element) => {
+      element.features.forEach((element2) => {
+        if (element2.checked) {
+          fea.push(element2);
+        }
+      });
+    });
+    let pack1 = pack;
+    pack1.features = fea;
+    setPack(pack1);
+    console.log("clicked pack jouter : ", pack);
   };
 
   return (
@@ -162,19 +184,32 @@ export default function AddPack() {
           </div>
         );
       })}
-      <div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <TextField
           required
           id="prix"
-          style={{ width: "100%" }}
+          style={{ width: "80%" }}
           variant="outlined"
           label="Prix"
-          value={pack.prix}
+          value={pack.price}
           type="number"
           margin="normal"
           onChange={(event) => {
-            onChange("prix", event.target.value);
+            onChange("price", event.target.value);
           }}
+        />
+        <Switch
+          margin="normal"
+          color="primary"
+          checked={true}
+          name="checkedA"
         />
       </div>
 
@@ -183,8 +218,7 @@ export default function AddPack() {
           value="Ajouter"
           width="50%"
           onClick={() => {
-            console.log("clicked pack jouter : ", pack);
-            console.log("clicked feature: ", features);
+            add();
           }}
         ></CustomFormButton>
       </div>

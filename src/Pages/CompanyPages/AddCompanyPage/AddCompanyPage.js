@@ -1,4 +1,4 @@
-import { TextField } from "@material-ui/core";
+import { FormControl, InputLabel, Select, TextField } from "@material-ui/core";
 import { DropzoneArea } from "material-ui-dropzone";
 import React, { useState } from "react";
 import { CustomFormButton } from "../../../Components/Buttons/CustomButton";
@@ -15,77 +15,110 @@ export default function AddCompanyPage() {
 
   return (
     <FormAdd Title="Ajout d'une société" className="col-md-6">
-      <TextField
-        id="title"
-        className="col-md-6"
-        variant="outlined"
-        label="Nom de la société"
-        value={company.title}
-        margin="normal"
-        placeholder="Nom de la société"
-        onChange={(event) => {
-          onChange("title", event.target.value);
-        }}
-      />
-      <TextField
-        className="col-md-6"
-        id="description"
-        label="Description de la société"
-        placeholder="Description de la société"
-        margin="normal"
-        multiline
-        variant="outlined"
-        value={company.description}
-        onChange={(event) => {
-          onChange("discription", event.target.value);
-        }}
-      />
-
-      <div
-        className="col-md-12"
-        style={{
-          justifyContent: "space-between",
-          flexDirection: "row",
-          display: "flex",
-          width: "100%",
-        }}
-      >
+      <div>
         <TextField
-          className="col-md-6"
+          id="title"
+          required
+          style={{ width: "100%" }}
+          variant="outlined"
+          label="Nom"
+          value={company.title}
+          margin="normal"
+          onChange={(event) => {
+            onChange("title", event.target.value);
+          }}
+        />
+      </div>
+      <div>
+        <TextField
           id="description"
-          label="Description de la société"
-          placeholder="Description de la société"
+          label="Description"
           margin="normal"
           multiline
+          required
+          style={{ width: "100%" }}
           variant="outlined"
           value={company.description}
           onChange={(event) => {
             onChange("discription", event.target.value);
           }}
         />
+      </div>
+      <div>
+        <FormControl
+          variant="outlined"
+          style={{ width: "100%" }}
+          margin="normal"
+        >
+          <InputLabel>Licence</InputLabel>
+          <Select
+            native
+            value={company.license}
+            onChange={(event) => {
+              onChange("license", event.target.value);
+            }}
+            label="license"
+            inputProps={{
+              name: "license",
+              id: "outlined-license-native-simple",
+            }}
+          >
+            <option aria-label="None" value="" />
+            <option value="ik2dsv2uhiuhiuef">ik2dsv2uhiuhiuef</option>
+            <option value="sdg252sdg2">sdg252sdg2</option>
+            <option value="sd2122sd3sd3sd2">sd2122sd3sd3sd2</option>
+          </Select>
+        </FormControl>
+      </div>
+
+      <div>
+        <FormControl
+          variant="outlined"
+          style={{ width: "100%" }}
+          margin="normal"
+        >
+          <InputLabel>Administrateur</InputLabel>
+          <Select
+            native
+            value={company.admin}
+            onChange={(event) => {
+              onChange("admin", event.target.value);
+            }}
+            label="admin"
+            inputProps={{
+              name: "admin",
+              id: "outlined-admin-native-simple",
+            }}
+          >
+            <option aria-label="None" value="" />
+            <option value="houssemeddine.gabsi@gmail.com">
+              houssemeddine gabsi
+            </option>
+            <option value="hedi.karray@gmail.com">hedi karray</option>
+            <option value="skander.saidi@gmail.com">skander saidi</option>
+          </Select>
+        </FormControl>
+      </div>
+
+      <div>
+        <DropzoneArea
+          acceptedFiles={["image/*"]}
+          dropzoneText={"Faites glisser et déposez une image ici ou cliquez"}
+          onChange={(files) => console.log("Files:", files)}
+          filesLimit={1}
+          classes="DropzoneArea"
+          showAlerts={false}
+        />
+      </div>
+      <div>
         <CustomFormButton
           value="Ajouter"
+          width="50%"
           onClick={() => {
             console.log("clicked : ", company);
           }}
         ></CustomFormButton>
       </div>
-      <DropzoneArea
-        className="col-md-6"
-        acceptedFiles={["image/*"]}
-        dropzoneText={"Faites glisser et déposez une image ici ou cliquez"}
-        onChange={(files) => console.log("Files:", files)}
-        filesLimit={1}
-        classes="DropzoneArea"
-        showAlerts={false}
-      />
-      <CustomFormButton
-        value="Ajouter"
-        width="50%"
-        onClick={() => {
-          console.log("clicked : ", company);
-        }}
-      ></CustomFormButton>
     </FormAdd>
   );
 }

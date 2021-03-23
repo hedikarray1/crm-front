@@ -1,13 +1,14 @@
-.main-container{
-    display: flex;
-    flex-direction: column;
-    width: 98%;
-   padding: 20px;
-    justify-content: center;
-   align-self: center;
-    background-color:white;
-    z-index: 5px;
-    border-radius: 20px;
-    box-shadow: 2px 2px 4px #0000006d;
-   
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 20px;
+  justify-content: center;
+  align-self: center;
+  background-color: white;
+  z-index: 5px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 4px #0000006d;
 }
