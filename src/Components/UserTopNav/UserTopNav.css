@@ -1,6 +1,6 @@
 .account-component{
     min-width: 150px;
-    width: 10vw;
+    width: 12vw;
     background-color: rgb(255, 255, 255);
     height: 100%;
     display: flex;
@@ -65,8 +65,11 @@
 }
 .username{
     color: rgb(128, 128, 128);
+    font-size: 1.2em;
+    font-weight: 500;
+    
 }
-.user-picture{
+.user-picture-rounded{
 width: 100%;
 height: 100%;
 border-radius: 100%;
