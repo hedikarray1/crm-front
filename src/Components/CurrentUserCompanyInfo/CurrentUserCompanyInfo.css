@@ -1,0 +1,16 @@
+.current-page{
+    width: 100%;
+    margin-top: 10px;
+}
+.no-content-picture{
+    width: 10vw;
+    height: 10vw;
+    
+}
+.no-content-text{
+    margin-top: 20px;
+   font-size: 1.5em;
+   font-weight: 600;
+   color: rgb(5, 2, 76);
+    
+}

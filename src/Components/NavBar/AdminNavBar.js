@@ -10,6 +10,7 @@ import AllCompanyPage from "../../Pages/CompanyPages/AllCompanyPage/AllCompanyPa
 import AddCompanyPage from "../../Pages/CompanyPages/AddCompanyPage/AddCompanyPage";
 import AddFeaturePage from "../../Pages/FeaturePages/AddFeaturePage/AddFeaturePage";
 import AddPack from "../../Pages/PackPages/AddPack/AddPack";
+import Profile from "../../Pages/ProfilePage/Profile";
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
   const showSideBar = () => {
@@ -85,6 +86,9 @@ function AdminNavBar() {
           <Route path="/home/AddCompanyPage" component={AddCompanyPage}></Route>
           <Route path="/home/AddFeaturePage" component={AddFeaturePage}></Route>
           <Route path="/home/AddPack" component={AddPack}></Route>
+          <Route path="/home/profil"  component={Profile}></Route>
+        
+
         </Switch>
       </div>
     </div>

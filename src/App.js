@@ -6,6 +6,7 @@ import AddClient from "./Pages/AdminPages/CLientsManagment/AddClient/AddClient";
 import { Provider } from "react-redux";
 import { store, persistor } from "./Store/ConfigureStore";
 import { PersistGate } from "redux-persist/integration/react";
+import Profile from "./Pages/ProfilePage/Profile";
 function App() {
   return (
     <Provider store={store}>
@@ -16,6 +17,7 @@ function App() {
               <Route path="/home" component={Home}></Route>
               <Route path="/" exact component={Home}></Route>
               <Route path="/login" exact component={Login}></Route>
+           
             </Switch>
           </Router>
         </div>
