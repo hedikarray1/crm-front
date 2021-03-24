@@ -1,8 +1,10 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 import Auth from "./Auth";
-import Company from "./Company"
+import Feature from "./Feature";
+import Company from "./Company";
 
 export default combineReducers({
-Auth,
-Company
+  Auth,
+  Feature,
+  Company
 });
