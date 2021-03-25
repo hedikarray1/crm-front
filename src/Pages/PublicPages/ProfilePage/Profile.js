@@ -1,7 +1,7 @@
 import { Tab, Tabs, Typography } from "@material-ui/core";
 import React, { useState } from "react";
-import CurrentUserCompanyInfo from "../../Components/CurrentUserCompanyInfo/CurrentUserCompanyInfo";
-import CurrentUserPersonnalInfo from "../../Components/CurrentUserPersonalInfo/CurrentUserPersonnalInfo";
+import CurrentUserCompanyInfo from "../../../Components/CurrentUserCompanyInfo/CurrentUserCompanyInfo";
+import CurrentUserPersonnalInfo from "../../../Components/CurrentUserPersonalInfo/CurrentUserPersonnalInfo";
 import "./Profile.css";
 function Profile() {
   const [selectedTab, setSelectedTab] = useState(0);

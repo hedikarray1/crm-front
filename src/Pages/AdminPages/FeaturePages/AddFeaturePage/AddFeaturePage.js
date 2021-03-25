@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { TextField } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
-import FormAdd from "../../../Components/forms/FormAdd";
-import { CustomFormButton } from "../../../Components/Buttons/CustomButton";
 import { connect } from "react-redux";
-import { AddFeature, GetAllGroupeName } from "../../../Actions/Feature";
+import { AddFeature, GetAllGroupeName } from "../../../../Actions/Feature";
+import FormAdd from "../../../../Components/forms/FormAdd";
+import { CustomFormButton } from "../../../../Components/Buttons/CustomButton";
 const gg = [];
 
 function AddFeaturePage(props) {

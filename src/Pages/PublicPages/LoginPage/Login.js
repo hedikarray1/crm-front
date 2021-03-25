@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css";
-import Logo from "../assets/pictures/logo-ilis.svg";
+import Logo from "../../../assets/pictures/logo-ilis.svg";
 import { connect } from "react-redux";
-import { LoginAuthAction } from "../Actions/Auth";
+import { LoginAuthAction } from "../../../Actions/Auth";
 function Login(props) {
   const { user, login } = props;
   const [userState, setUserState] = useState({});

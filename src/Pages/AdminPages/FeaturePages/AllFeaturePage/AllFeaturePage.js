@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { GetAllFeatures } from "../../../Actions/Feature";
-import { CustomFormButton } from "../../../Components/Buttons/CustomButton";
-import FormAdd from "../../../Components/forms/FormAdd";
-import EnhancedTable from "../../../Components/Tables/CustomTable";
+import { GetAllFeatures } from "../../../../Actions/Feature";
+import { CustomFormButton } from "../../../../Components/Buttons/CustomButton";
+import FormAdd from "../../../../Components/forms/FormAdd";
+import EnhancedTable from "../../../../Components/Tables/CustomTable";
 import AddFeaturePage from "../AddFeaturePage/AddFeaturePage";
 
 const headCells = [

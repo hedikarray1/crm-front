@@ -1,5 +1,5 @@
 import React from "react";
-import EnhancedTable from "../../../Components/Tables/CustomTable";
+import EnhancedTable from "../../../../Components/Tables/CustomTable";
 import "./AllCompanyPage.css";
 
 const rows = [

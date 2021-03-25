@@ -1,8 +1,8 @@
 import { FormControl, InputLabel, Select, TextField } from "@material-ui/core";
 import { DropzoneArea } from "material-ui-dropzone";
 import React, { useState } from "react";
-import { CustomFormButton } from "../../../Components/Buttons/CustomButton";
-import FormAdd from "../../../Components/forms/FormAdd";
+import { CustomFormButton } from "../../../../Components/Buttons/CustomButton";
+import FormAdd from "../../../../Components/forms/FormAdd";
 
 export default function AddCompanyPage() {
   const [company, setCompany] = useState({});
