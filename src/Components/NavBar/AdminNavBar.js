@@ -10,6 +10,8 @@ import AllCompanyPage from "../../Pages/CompanyPages/AllCompanyPage/AllCompanyPa
 import AddCompanyPage from "../../Pages/CompanyPages/AddCompanyPage/AddCompanyPage";
 import AddFeaturePage from "../../Pages/FeaturePages/AddFeaturePage/AddFeaturePage";
 import AddPack from "../../Pages/PackPages/AddPack/AddPack";
+import AllPackPage from "../../Pages/PackPages/AllPackPage/AllPackPage";
+
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
   const showSideBar = () => {
@@ -67,6 +69,14 @@ function AdminNavBar() {
           </li>
 
           <li className="menu-bars-item">
+            <Link to="/home/AllPack" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AllPack</span>
+            </Link>
+          </li>
+
+
+          <li className="menu-bars-item">
             <Link to="/home/login" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />{" "}
               <span>login</span>
@@ -85,6 +95,8 @@ function AdminNavBar() {
           <Route path="/home/AddCompanyPage" component={AddCompanyPage}></Route>
           <Route path="/home/AddFeaturePage" component={AddFeaturePage}></Route>
           <Route path="/home/AddPack" component={AddPack}></Route>
+          <Route path="/home/AllPack" component={AllPackPage}></Route>
+     
         </Switch>
       </div>
     </div>
