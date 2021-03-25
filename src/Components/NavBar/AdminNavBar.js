@@ -10,6 +10,8 @@ import AllCompanyPage from "../../Pages/CompanyPages/AllCompanyPage/AllCompanyPa
 import AddCompanyPage from "../../Pages/CompanyPages/AddCompanyPage/AddCompanyPage";
 import AddFeaturePage from "../../Pages/FeaturePages/AddFeaturePage/AddFeaturePage";
 import AddPack from "../../Pages/PackPages/AddPack/AddPack";
+import AllPackPage from "../../Pages/PackPages/AllPackPage/AllPackPage";
+
 import AddLicencePage from "../../Pages/LicencePages/AddLicencePage/AddLicencePage";
 import AllFeaturePage from "../../Pages/FeaturePages/AllFeaturePage/AllFeaturePage";
 import Profile from "../../Pages/ProfilePage/Profile";
@@ -88,6 +90,13 @@ function AdminNavBar() {
           </li>
 
           <li className="menu-bars-item">
+            <Link to="/home/AllPack" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AllPack</span>
+            </Link>
+          </li>
+
+<li>
             <Link to="/home/AddLicencePage" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
               <span>AddLicencePage</span>
@@ -113,6 +122,8 @@ function AdminNavBar() {
           <Route path="/home/AddCompanyPage" component={AddCompanyPage}></Route>
           <Route path="/home/AddFeaturePage" component={AddFeaturePage}></Route>
           <Route path="/home/AddPack" component={AddPack}></Route>
+          <Route path="/home/AllPack" component={AllPackPage}></Route>
+     
           <Route path="/home/AddLicencePage" component={AddLicencePage}></Route>
           <Route path="/home/AllFeaturePage" component={AllFeaturePage}></Route>
           <Route path="/home/profil" component={Profile}></Route>
