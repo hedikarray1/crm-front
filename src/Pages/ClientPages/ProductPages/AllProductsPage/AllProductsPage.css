@@ -1,0 +1,18 @@
+.tabs-custom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-self: flex-start;
+  width: 98%;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #145388;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.tab-custom.selected {
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #145388;
+}

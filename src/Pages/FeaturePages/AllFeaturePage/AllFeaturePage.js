@@ -107,7 +107,7 @@ function AllFeaturePage(props) {
 const mapStateToProps = (state) => {
   return {
     features: state.Feature.features,
-    token: state.Auth.user.user.Authorization,
+    token: state.Auth.Authorization,
   };
 };
 
