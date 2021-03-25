@@ -12,11 +12,17 @@ import AddFeaturePage from "../../Pages/FeaturePages/AddFeaturePage/AddFeaturePa
 import AddPack from "../../Pages/PackPages/AddPack/AddPack";
 import AllPackPage from "../../Pages/PackPages/AllPackPage/AllPackPage";
 
+import AddLicencePage from "../../Pages/LicencePages/AddLicencePage/AddLicencePage";
+import AllFeaturePage from "../../Pages/FeaturePages/AllFeaturePage/AllFeaturePage";
+import Profile from "../../Pages/ProfilePage/Profile";
+import AddProductPage from "../../Pages/ClientPages/ProductPages/AddProductPage/AddProductPage";
+import AllProductsPage from "../../Pages/ClientPages/ProductPages/AllProductsPage/AllProductsPage";
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
   const showSideBar = () => {
     setAdminSideBar(!AdminSideBar);
   };
+  
 
   return (
     <div>
@@ -41,6 +47,21 @@ function AdminNavBar() {
               <span>Clients</span>
             </Link>
           </li>
+
+          <li className="menu-bars-item">
+            <Link to="/home/AllProductsPage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>All Products</span>
+            </Link>
+          </li>
+
+          <li className="menu-bars-item">
+            <Link to="/home/AllFeaturePage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AllFeaturePage</span>
+            </Link>
+          </li>
+
           <li className="menu-bars-item">
             <Link to="/home/AllCompany" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
@@ -75,6 +96,12 @@ function AdminNavBar() {
             </Link>
           </li>
 
+<li>
+            <Link to="/home/AddLicencePage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AddLicencePage</span>
+            </Link>
+          </li>
 
           <li className="menu-bars-item">
             <Link to="/home/login" className="menu-bars">
@@ -97,6 +124,14 @@ function AdminNavBar() {
           <Route path="/home/AddPack" component={AddPack}></Route>
           <Route path="/home/AllPack" component={AllPackPage}></Route>
      
+          <Route path="/home/AddLicencePage" component={AddLicencePage}></Route>
+          <Route path="/home/AllFeaturePage" component={AllFeaturePage}></Route>
+          <Route path="/home/profil" component={Profile}></Route>
+          <Route path="/home/AddProductPage" component={AddProductPage}></Route>
+          <Route
+            path="/home/AllProductsPage"
+            component={AllProductsPage}
+          ></Route>
         </Switch>
       </div>
     </div>

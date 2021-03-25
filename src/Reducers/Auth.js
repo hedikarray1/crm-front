@@ -1,71 +1,63 @@
-
-
 import { useHistory } from "react-router";
-import * as ActionTypes from "../Actions/index"
+import * as ActionTypes from "../Actions/index";
 
-const authtate={
-    isLoggedIn:false,
-    user:{Authorization:localStorage.getItem("Authorization")}
-}
+const authtate = {
+  isLoggedIn: false,
+  Authorization: localStorage.getItem("Authorization"),
+  current_user: null,
+  loading: false,
+};
 
+export default function Auth(state = authtate, action = {}) {
+  switch (action.type) {
+    case ActionTypes.LOGIN:
+      return {
+        ...state,
+        loading: true,
+        errors: action.error ? action.payload.errors : null,
+      };
 
-export default function Auth(state=authtate,action={}){
+    case ActionTypes.LOGIN_SUCCESS:
+      localStorage.setItem("Authorization", action.payload.authorization);
+      return {
+        ...state,
+        Authorization: action.payload.authorization,
+        loading: false,
+        isLoggedIn: true,
 
-    switch (action.type) {
-      case ActionTypes.LOGIN:
-        return {
-            ...state,
-            loading: true,
-            errors: action.error ? action.payload.errors : null
-          };
-    
-          case ActionTypes.LOGIN_SUCCESS:
-          localStorage.setItem("Authorization",action.payload.authorization)
-          return {
-                user:{...state.user,Authorization:action.payload.authorization},
+        errors: action.error ? action.payload.errors : null,
+      };
+    case ActionTypes.LOGIN_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        isLoggedIn: false,
+        errors: action.payload.errors,
+      };
 
-                loading: false,
-                isLoggedIn:true,
+    case ActionTypes.GET_CURRENT_USER_SUCCESS:
+      return {
+        ...state,
+        current_user: action.payload,
 
-                errors: action.error ? action.payload.errors : null
-              };
-              case ActionTypes.LOGIN_FAILURE:
-                return {
-                    ...state,
-                    loading: false,
-                    isLoggedIn:false,
-                    errors: action.payload.errors
-                  };
-        
-                  case ActionTypes.GET_CURRENT_USER_SUCCESS:
-                  
-                    return {
-                          user:{...state,current_user:action.payload},
-          
-                          loading: false,
-                          isLoggedIn:true,
-          
-                          errors: action.error ? action.payload.errors : null
-                        };
-                        case ActionTypes.GET_CURRENT_USER_FAILURE:
-                          return {
-                              ...state,
-                              loading: false,
-                              
-                              errors: action.payload.errors
-                            };
+        loading: false,
+        isLoggedIn: true,
 
-                            case ActionTypes.LOGOUT:
-                              
+        errors: action.error ? action.payload.errors : null,
+      };
+    case ActionTypes.GET_CURRENT_USER_FAILURE:
+      return {
+        ...state,
+        loading: false,
 
-                                return {
-                                    
-                                  };
-                  
+        errors: action.payload.errors,
+      };
 
-        
-        default:
-            return state;
-            break;
-    }
+    case ActionTypes.LOGOUT:
+      return {};
+
+    default:
+      return state;
+      break;
+  }
 }
