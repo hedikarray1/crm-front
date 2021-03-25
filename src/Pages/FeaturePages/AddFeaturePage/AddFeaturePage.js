@@ -113,7 +113,7 @@ function AddFeaturePage(props) {
 
 const mapStateToProps = (state) => {
   return {
-    token: state.Auth.user.user.Authorization,
+    token: state.Auth.Authorization,
     groupNames: state.Feature.groupNames,
   };
 };

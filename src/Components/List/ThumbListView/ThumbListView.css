@@ -1,0 +1,8 @@
+.img_round {
+  border-top-left-radius: 0.75rem !important;
+  border-bottom-left-radius: 0.75rem !important;
+}
+
+.rounded_card {
+  border-radius: 0.75rem !important;
+}
