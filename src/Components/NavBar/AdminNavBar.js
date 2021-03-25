@@ -3,26 +3,25 @@ import { Link, Route, Router, Switch } from "react-router-dom";
 import "./AdminNavBar.css";
 import * as IoiIcons from "react-icons/io";
 import * as GiIcons from "react-icons/gi";
-import AddClient from "../../Pages/AdminPages/CLientsManagment/AddClient/AddClient";
-import Login from "../../Pages/Login";
 import UserTopNav from "../UserTopNav/UserTopNav";
-import AllCompanyPage from "../../Pages/CompanyPages/AllCompanyPage/AllCompanyPage";
-import AddCompanyPage from "../../Pages/CompanyPages/AddCompanyPage/AddCompanyPage";
-import AddFeaturePage from "../../Pages/FeaturePages/AddFeaturePage/AddFeaturePage";
-import AddPack from "../../Pages/PackPages/AddPack/AddPack";
-import AllPackPage from "../../Pages/PackPages/AllPackPage/AllPackPage";
-
-import AddLicencePage from "../../Pages/LicencePages/AddLicencePage/AddLicencePage";
-import AllFeaturePage from "../../Pages/FeaturePages/AllFeaturePage/AllFeaturePage";
-import Profile from "../../Pages/ProfilePage/Profile";
+import AddClient from "../../Pages/AdminPages/CLientsManagment/AddClient/AddClient";
+import Login from "../../Pages/PublicPages/LoginPage/Login";
+import AllCompanyPage from "../../Pages/AdminPages/CompanyPages/AllCompanyPage/AllCompanyPage";
+import AddCompanyPage from "../../Pages/AdminPages/CompanyPages/AddCompanyPage/AddCompanyPage";
+import AddFeaturePage from "../../Pages/AdminPages/FeaturePages/AddFeaturePage/AddFeaturePage";
+import AddPack from "../../Pages/AdminPages/PackPages/AddPack/AddPack";
+import AllPackPage from "../../Pages/AdminPages/PackPages/AllPackPage/AllPackPage";
+import AddLicencePage from "../../Pages/AdminPages/LicencePages/AddLicencePage/AddLicencePage";
+import AllFeaturePage from "../../Pages/AdminPages/FeaturePages/AllFeaturePage/AllFeaturePage";
+import Profile from "../../Pages/PublicPages/ProfilePage/Profile";
 import AddProductPage from "../../Pages/ClientPages/ProductPages/AddProductPage/AddProductPage";
 import AllProductsPage from "../../Pages/ClientPages/ProductPages/AllProductsPage/AllProductsPage";
+
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
   const showSideBar = () => {
     setAdminSideBar(!AdminSideBar);
   };
-  
 
   return (
     <div>
@@ -96,7 +95,7 @@ function AdminNavBar() {
             </Link>
           </li>
 
-<li>
+          <li>
             <Link to="/home/AddLicencePage" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
               <span>AddLicencePage</span>
@@ -123,7 +122,7 @@ function AdminNavBar() {
           <Route path="/home/AddFeaturePage" component={AddFeaturePage}></Route>
           <Route path="/home/AddPack" component={AddPack}></Route>
           <Route path="/home/AllPack" component={AllPackPage}></Route>
-     
+
           <Route path="/home/AddLicencePage" component={AddLicencePage}></Route>
           <Route path="/home/AllFeaturePage" component={AllFeaturePage}></Route>
           <Route path="/home/profil" component={Profile}></Route>

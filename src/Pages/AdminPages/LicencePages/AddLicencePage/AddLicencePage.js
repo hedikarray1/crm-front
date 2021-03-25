@@ -1,8 +1,7 @@
 import { FormControl, InputLabel, Select, TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import { CustomFormButton } from "../../../Components/Buttons/CustomButton";
-import FormAdd from "../../../Components/forms/FormAdd";
-
+import { CustomFormButton } from "../../../../Components/Buttons/CustomButton";
+import FormAdd from "../../../../Components/forms/FormAdd";
 export default function AddLicencePage() {
   const [licence, setlicence] = useState({});
 
