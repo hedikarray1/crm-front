@@ -5,4 +5,20 @@
 
 .rounded_card {
   border-radius: 0.75rem !important;
+  height: auto;
+}
+
+.card_size {
+  min-width: 250px !important;
+  max-width: 355px !important;
+}
+
+.txt_price {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+
+.img_border2 {
+  border-bottom: 1.5px solid #d7d7d77a;
 }

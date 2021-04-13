@@ -6,3 +6,27 @@
 .rounded_card {
   border-radius: 0.75rem !important;
 }
+
+.card_body_padding {
+  padding: 0px !important;
+}
+
+.col_min_width {
+  min-width: 400px !important;
+}
+
+.img_border {
+  border-right: 1.5px solid #d7d7d77a;
+}
+
+.container_btn {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 5px !important;
+}
+
+.btn_product {
+  padding: 0.375rem 0.75rem !important;
+}

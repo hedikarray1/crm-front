@@ -16,6 +16,7 @@ import AllFeaturePage from "../../Pages/AdminPages/FeaturePages/AllFeaturePage/A
 import Profile from "../../Pages/PublicPages/ProfilePage/Profile";
 import AddProductPage from "../../Pages/ClientPages/ProductPages/AddProductPage/AddProductPage";
 import AllProductsPage from "../../Pages/ClientPages/ProductPages/AllProductsPage/AllProductsPage";
+import DetailProductPage from "../../Pages/ClientPages/ProductPages/DetailProductPage/DetailProductPage";
 
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
@@ -44,6 +45,12 @@ function AdminNavBar() {
             <Link to="/home/addClient" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
               <span>Clients</span>
+            </Link>
+          </li>
+          <li className="menu-bars-item">
+            <Link to="/home/AddProductPage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>Add Product</span>
             </Link>
           </li>
 
@@ -127,6 +134,10 @@ function AdminNavBar() {
           <Route path="/home/AllFeaturePage" component={AllFeaturePage}></Route>
           <Route path="/home/profil" component={Profile}></Route>
           <Route path="/home/AddProductPage" component={AddProductPage}></Route>
+          <Route
+            path="/home/DetailProductPage"
+            component={DetailProductPage}
+          ></Route>
           <Route
             path="/home/AllProductsPage"
             component={AllProductsPage}
