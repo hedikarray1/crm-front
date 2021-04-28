@@ -5,6 +5,8 @@ import Company from "./Company";
 import Product from "./Product";
 import Category from "./Category";
 import Tags from "./Tags";
+import Customer from "./Customer.js";
+import PictureWordPress from "./PictureWordPress.js";
 
 export default combineReducers({
   Auth,
@@ -13,4 +15,6 @@ export default combineReducers({
   Product,
   Category,
   Tags,
+  Customer,
+  PictureWordPress,
 });

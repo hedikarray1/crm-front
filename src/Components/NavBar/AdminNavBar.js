@@ -4,6 +4,9 @@ import "./AdminNavBar.css";
 import * as IoiIcons from "react-icons/io";
 import * as GiIcons from "react-icons/gi";
 import UserTopNav from "../UserTopNav/UserTopNav";
+
+import CustomersList from "../../Pages/CustomersPages/CustomersList/CustomersList";
+import CategoryList from "../../Pages/CategoryPages/CategoryList/CategoryList";
 import AddClient from "../../Pages/AdminPages/CLientsManagment/AddClient/AddClient";
 import Login from "../../Pages/PublicPages/LoginPage/Login";
 import AllCompanyPage from "../../Pages/AdminPages/CompanyPages/AllCompanyPage/AllCompanyPage";
@@ -133,6 +136,8 @@ function AdminNavBar() {
           <Route path="/home/AddLicencePage" component={AddLicencePage}></Route>
           <Route path="/home/AllFeaturePage" component={AllFeaturePage}></Route>
           <Route path="/home/profil" component={Profile}></Route>
+          <Route path="/home/customers" component={CustomersList}></Route>
+          <Route path="/home/categories" component={CategoryList}></Route>
           <Route path="/home/AddProductPage" component={AddProductPage}></Route>
           <Route
             path="/home/DetailProductPage"
