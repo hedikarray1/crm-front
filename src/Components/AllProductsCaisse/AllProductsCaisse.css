@@ -1,0 +1,9 @@
+.scroll-list{
+    width: 100%;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    
+}

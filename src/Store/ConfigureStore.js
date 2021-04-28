@@ -22,7 +22,9 @@ const persistConfig = {
 if (window.navigator.userAgent.includes("Chrome")) {
    // store = createStore(RootReducer,initialState,compose(applyMiddleware(...middleWare), window.__REDUX_DEVTOOLS_EXTENSION__ &&window.__REDUX_DEVTOOLS_EXTENSION__()))
 //new
-store = createStore(persistedReducer,initialState,compose(applyMiddleware(...middleWare), window.__REDUX_DEVTOOLS_EXTENSION__ &&window.__REDUX_DEVTOOLS_EXTENSION__()))
+store = createStore(persistedReducer,initialState,compose(applyMiddleware(...middleWare)
+//, window.__REDUX_DEVTOOLS_EXTENSION__ &&window.__REDUX_DEVTOOLS_EXTENSION__()
+))
 
 } else {
    // store = createStore(RootReducer, initialState, compose(applyMiddleware(...middleWare)))
