@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "@lourenci/react-kanban": "^2.1.0",
     "@material-ui/core": "^4.11.3",
     "@material-ui/data-grid": "^4.0.0-alpha.23",
@@ -15,23 +16,16 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "classnames": "^2.2.6",
-<<<<<<< HEAD
     "crypto-js": "^4.0.0",
     "css-loader": "^5.1.1",
-=======
-    "css-loader": "^5.1.4",
->>>>>>> a940c421054b5b4c71c5fe33f46dcac27b1c1f8e
     "draft-js": "^0.11.7",
     "foundation-sites": "6.6.1",
     "i": "^0.3.6",
     "material-ui-dropzone": "^3.5.0",
-<<<<<<< HEAD
     "node-sass": "^5.0.0",
     "npm": "^7.6.3",
     "oauth-1.0a": "^2.2.6",
-=======
-    "npm": "^7.7.0",
->>>>>>> a940c421054b5b4c71c5fe33f46dcac27b1c1f8e
+  
     "prop-types": "^15.7.2",
     "rc-switch": "^3.2.2",
     "react": "^17.0.2",
@@ -41,6 +35,7 @@
     "react-draft-wysiwyg": "^1.14.5",
     "react-dropzone-component": "^3.2.0",
     "react-icons": "^4.2.0",
+    "react-intl": "^5.14.0",
     "react-perfect-scrollbar": "^1.5.8",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",

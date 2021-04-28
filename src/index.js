@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "bootstrap/dist/css/bootstrap.min.css";
-import ReactTable from "react-table-6/react-table.css";
+import "./assets/css/vendor/bootstrap.min.css";
+import "./assets/css/vendor/bootstrap.rtl.only.min.css";
 import "./assets/css/sass/themes/gogo.light.blue.scss";
 ReactDOM.render(
   <React.StrictMode>

@@ -19,6 +19,7 @@ import AllFeaturePage from "../../Pages/AdminPages/FeaturePages/AllFeaturePage/A
 import Profile from "../../Pages/PublicPages/ProfilePage/Profile";
 import AddProductPage from "../../Pages/ClientPages/ProductPages/AddProductPage/AddProductPage";
 import AllProductsPage from "../../Pages/ClientPages/ProductPages/AllProductsPage/AllProductsPage";
+import DetailProductPage from "../../Pages/ClientPages/ProductPages/DetailProductPage/DetailProductPage";
 
 function AdminNavBar() {
   const [AdminSideBar, setAdminSideBar] = useState(false);
@@ -47,6 +48,19 @@ function AdminNavBar() {
             <Link to="/home/addClient" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
               <span>Clients</span>
+            </Link>
+          </li>
+
+          <li className="menu-bars-item">
+            <Link to="/home/AddPack" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AddPack</span>
+            </Link>
+          </li>
+          <li className="menu-bars-item">
+            <Link to="/home/AddProductPage" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>Add Product</span>
             </Link>
           </li>
 
@@ -81,13 +95,6 @@ function AdminNavBar() {
             <Link to="/home/AddFeaturePage" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
               <span>AddFeaturePage</span>
-            </Link>
-          </li>
-
-          <li className="menu-bars-item">
-            <Link to="/home/AddPack" className="menu-bars">
-              <GiIcons.GiFactory size="40" className="item-icon" />
-              <span>AddPack</span>
             </Link>
           </li>
 
@@ -132,6 +139,10 @@ function AdminNavBar() {
           <Route path="/home/customers" component={CustomersList}></Route>
           <Route path="/home/categories" component={CategoryList}></Route>
           <Route path="/home/AddProductPage" component={AddProductPage}></Route>
+          <Route
+            path="/home/DetailProductPage"
+            component={DetailProductPage}
+          ></Route>
           <Route
             path="/home/AllProductsPage"
             component={AllProductsPage}

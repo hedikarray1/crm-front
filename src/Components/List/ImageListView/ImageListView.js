@@ -21,50 +21,49 @@ export default function ImageListView(props) {
     <Colxx sm="6" lg="4" xl="3" className="mb-3" key={product.id}>
       <ContextMenuTrigger id="menu_id" data={product.id} collect={collect}>
         <Card
-          onClick={(event) => onCheckItem(event, product.id)}
-          className={classnames("rounded_card", {
+          onClick={(event) => onCheckItem(event, product)}
+          className={classnames("rounded_card card_size", {
             active: isSelect,
           })}
         >
           <div className="position-relative">
-            <NavLink to={`?p=${product.id}`} className="w-40 w-sm-100">
+            <NavLink to={`?p=${product.id}`} className="w-40 w-sm-100 ">
               <CardImg
-                className="img_round_card"
+                className="img_round_card img_border2"
                 top
                 alt={product.name}
-                src={product.images[0].src}
+                src={product.images.length > 0 ? product.images[0].src : ""}
+              
               />
             </NavLink>
             <Badge
-              color={product.statusColor}
+              color={product.stock_status == "instock" ? "success" : "danger"}
               pill
               className="position-absolute badge-top-left"
             >
-              {product.stock_status}
+              {product.stock_status == "instock"
+                ? "En stock"
+                : "Rupture de stock"}
             </Badge>
           </div>
           <CardBody>
             <Row>
-              <Colxx xxs="2">
-                <CustomInput
-                  className="item-check mb-0"
-                  type="checkbox"
-                  id={`check_${product.id}`}
-                  checked={isSelect}
-                  onChange={() => {}}
-                  label=""
-                />
-              </Colxx>
-              <Colxx xxs="10" className="mb-3">
+              <Colxx xxs="12">
                 <CardSubtitle>{product.name}</CardSubtitle>
                 <CardText className="text-muted text-small mb-0 font-weight-light">
                   {product.categories.map((cat) => {
-                    return cat.name + ", ";
+                    return (
+                      <Badge color="outline-secondary mb-1 mr-1" pill>
+                        {cat.name.replace("&amp;", "&")}
+                      </Badge>
+                    );
                   })}
                 </CardText>
-                <CardText className="text-muted text-small mb-0 font-weight-light">
+                <CardText></CardText>
+                <p className="txt_price color-theme-2">
                   {product.price}
-                </CardText>
+                  {" DT"}
+                </p>
               </Colxx>
             </Row>
           </CardBody>

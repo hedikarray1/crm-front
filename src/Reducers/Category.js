@@ -1,7 +1,7 @@
 import React from "react";
 import * as ActionTypes from "../Actions/index";
 
-const categoryState ={
+const categoryState = {
   allCategories: [],
   totalCategory: 0,
   totalPagesCategory: 0,
@@ -30,30 +30,29 @@ export default function Category(state = categoryState, action = {}) {
         loading: false,
         errors: action.payload.errors,
       };
-      case ActionTypes.CATEGORY_UPLOAD_PICTURE_SUCCESS:
-        return {
-          ...state,
-        
-          loading: false,
-        };
-      case ActionTypes.CATEGORY_UPLOAD_PICTURE_FAILURE:
-        return {
-          ...state,
-          loading: false,
-          errors: action.payload.errors,
-        };
-        case ActionTypes.CATEGORY_UPLOAD_PICTURE_TOKEN_SUCCESS:
-            return {
-            ...state,
-              loading: false,
-             
-            };
-          case ActionTypes.CATEGORY_UPLOAD_PICTURE_TOKEN_FAILURE:
-            return {
-              ...state,
-              loading: false,
-              errors: action.payload.errors,
-            };
+    case ActionTypes.CATEGORY_UPLOAD_PICTURE_SUCCESS:
+      return {
+        ...state,
+
+        loading: false,
+      };
+    case ActionTypes.CATEGORY_UPLOAD_PICTURE_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        errors: action.payload.errors,
+      };
+    case ActionTypes.CATEGORY_UPLOAD_PICTURE_TOKEN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+    case ActionTypes.CATEGORY_UPLOAD_PICTURE_TOKEN_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        errors: action.payload.errors,
+      };
     /******************************************* */
     default:
       return state;
