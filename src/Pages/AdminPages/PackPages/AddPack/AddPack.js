@@ -44,6 +44,13 @@ const groupeTitles = [
       { title: "edit stock", checked: false },
     ],
   },
+  {
+    title: "gestion stock",
+    features: [
+      { title: "add stock", checked: false },
+      { title: "edit stock", checked: false },
+    ],
+  },
 ];
 
 export default function AddPack() {

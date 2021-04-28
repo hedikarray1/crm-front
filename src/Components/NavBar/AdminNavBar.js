@@ -47,6 +47,13 @@ function AdminNavBar() {
               <span>Clients</span>
             </Link>
           </li>
+
+          <li className="menu-bars-item">
+            <Link to="/home/AddPack" className="menu-bars">
+              <GiIcons.GiFactory size="40" className="item-icon" />
+              <span>AddPack</span>
+            </Link>
+          </li>
           <li className="menu-bars-item">
             <Link to="/home/AddProductPage" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
@@ -85,13 +92,6 @@ function AdminNavBar() {
             <Link to="/home/AddFeaturePage" className="menu-bars">
               <GiIcons.GiFactory size="40" className="item-icon" />
               <span>AddFeaturePage</span>
-            </Link>
-          </li>
-
-          <li className="menu-bars-item">
-            <Link to="/home/AddPack" className="menu-bars">
-              <GiIcons.GiFactory size="40" className="item-icon" />
-              <span>AddPack</span>
             </Link>
           </li>
 

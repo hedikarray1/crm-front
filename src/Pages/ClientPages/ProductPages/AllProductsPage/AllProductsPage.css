@@ -16,3 +16,9 @@
   border-bottom-style: solid;
   border-bottom-color: #145388;
 }
+
+.display_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

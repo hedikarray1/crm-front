@@ -27,7 +27,7 @@ export default function ThumbListView(props) {
           <img
             onClick={(event) => onCheckItem(event, product)}
             alt={product.name}
-            src={product.images[0].src}
+            src={product.images.length > 0 ? product.images[0].src : ""}
             className="list-thumbnail responsive border-0 card-img-left img_round"
           />
         </NavLink>
@@ -86,7 +86,7 @@ export default function ThumbListView(props) {
               <Button
                 outline
                 color="danger"
-                className="mb-2 btn_product"
+                className="mb-2 btn_product margin_btn_delete"
                 onClick={() => {
                   console.log("btn supprimer clicked");
                 }}

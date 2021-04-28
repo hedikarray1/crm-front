@@ -32,7 +32,8 @@ export default function ImageListView(props) {
                 className="img_round_card img_border2"
                 top
                 alt={product.name}
-                src={product.images[0].src}
+                src={product.images.length > 0 ? product.images[0].src : ""}
+              
               />
             </NavLink>
             <Badge

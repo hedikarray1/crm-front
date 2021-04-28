@@ -40,8 +40,6 @@ class ListPageHeading extends Component {
 
   render() {
     const {
-      displayMode,
-      changeDisplayMode,
       changeOrderBy,
       changePageSize,
       selectedPageSize,
@@ -75,26 +73,6 @@ class ListPageHeading extends Component {
               className="d-md-block"
               id="displayOptions"
             >
-              <span className="mr-3 d-inline-block float-md-left">
-                <a
-                  href="#/"
-                  className={`mr-2 view-icon ${
-                    displayMode === "thumblist" ? "active" : ""
-                  }`}
-                  onClick={() => changeDisplayMode("thumblist")}
-                >
-                  <ThumbListIcon />
-                </a>
-                <a
-                  href="#/"
-                  className={`mr-2 view-icon ${
-                    displayMode === "imagelist" ? "active" : ""
-                  }`}
-                  onClick={() => changeDisplayMode("imagelist")}
-                >
-                  <ImageListIcon />
-                </a>
-              </span>
               <div className="d-block d-md-inline-block pt-1">
                 <UncontrolledDropdown className="mr-1 float-md-left btn-group mb-1">
                   <DropdownToggle caret color="outline-dark" size="xs">

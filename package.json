@@ -21,6 +21,7 @@
     "i": "^0.3.6",
     "material-ui-dropzone": "^3.5.0",
     "npm": "^7.7.0",
+    "oauth-1.0a": "^2.2.6",
     "prop-types": "^15.7.2",
     "rc-switch": "^3.2.2",
     "react": "^17.0.2",
