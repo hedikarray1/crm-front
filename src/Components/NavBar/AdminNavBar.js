@@ -28,7 +28,7 @@ function AdminNavBar() {
   };
 
   return (
-    <div>
+    <div style={{ overflow: "scroll" }}>
       <div className="top-bar-menu">
         <Link to="#" className="">
           <IoiIcons.IoIosMenu

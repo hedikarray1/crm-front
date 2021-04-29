@@ -21,11 +21,7 @@ import { Button, Card, Col, Form, Row } from "react-bootstrap";
 import "./AddProductPage.css";
 import Chip from "@material-ui/core/Chip";
 
-import {
-  ClientGetAllProducts,
-  ClientGetAllProducts2,
-} from "../../../../Actions/Product";
-import { productData } from "../../../../Data/ProductData";
+import { ClientGetAllProducts, AddProduct } from "../../../../Actions/Product";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -63,11 +59,9 @@ function AddProductPage(props) {
   };
 
   useEffect(() => {
-    let product1 = product;
-    product1.name = "test name";
-    product1.description = "test description";
-    setproduct(product1);
-
+    let prod = product;
+    prod.type = "simple";
+    setproduct(prod);
     console.log("in use effect");
     props.GetAllCategories(token, 1, 100);
     props.GetAllTags(token, 1, 100);
@@ -100,6 +94,7 @@ function AddProductPage(props) {
 
   const AddProduct = () => {
     console.log("product ajouter :", product);
+    props.AddProduct(product);
   };
 
   return (
@@ -116,63 +111,52 @@ function AddProductPage(props) {
             </Stepper>
           </div>
           {activeStep === 0 ? (
-            <div>
-              <div>
-                <TextField
-                  id="name"
-                  style={{ width: "100%" }}
-                  variant="outlined"
-                  label="Nom du produit"
-                  defaultValue={product.name}
-                  margin="normal"
-                  onChange={(event) => {
-                    onChange("name", event.target.value);
-                  }}
-                />
-              </div>
-              <div>
-                <TextField
-                  id="slug"
-                  style={{ width: "100%" }}
-                  variant="outlined"
-                  label="slug"
-                  defaultValue={product.slug}
-                  margin="normal"
-                  onChange={(event) => {
-                    onChange("slug", event.target.value);
-                  }}
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  id="description"
-                  style={{ width: "100%" }}
-                  label="Description du produit"
-                  margin="normal"
-                  multiline
-                  variant="outlined"
-                  defaultValue={product.description}
-                  onChange={(event) => {
-                    onChange("description", event.target.value);
-                  }}
-                />
-              </div>
-              <div>
-                <TextField
-                  required
-                  id="short_description"
-                  style={{ width: "100%" }}
-                  label="Description courte du produit"
-                  margin="normal"
-                  multiline
-                  variant="outlined"
-                  defaultValue={product.short_description}
-                  onChange={(event) => {
-                    onChange("short_description", event.target.value);
-                  }}
-                />
-              </div>
+            <div className="col-md-12">
+              <Form>
+                <Form.Group controlId="name">
+                  <Form.Label>Nom du produit</Form.Label>
+                  <Form.Control
+                    defaultValue={product.name}
+                    onChange={(event) => {
+                      onChange("name", event.target.value);
+                    }}
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="slug">
+                  <Form.Label>Slug du produit</Form.Label>
+                  <Form.Control
+                    defaultValue={product.slug}
+                    onChange={(event) => {
+                      onChange("slug", event.target.value);
+                    }}
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="description">
+                  <Form.Label>Description du produit</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows={5}
+                    defaultValue={product.description}
+                    onChange={(event) => {
+                      onChange("description", event.target.value);
+                    }}
+                  />
+                </Form.Group>
+
+                <Form.Group controlId="short_description">
+                  <Form.Label>Description courte du produit</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    rows={3}
+                    defaultValue={product.short_description}
+                    onChange={(event) => {
+                      onChange("short_description", event.target.value);
+                    }}
+                  />
+                </Form.Group>
+              </Form>
             </div>
           ) : null}
 
@@ -680,6 +664,9 @@ const mapDispatchProps = (dispatch) => {
     },
     GetAllProducts: (token) => {
       dispatch(ClientGetAllProducts(token));
+    },
+    AddProduct: (product) => {
+      dispatch(AddProduct(product));
     },
   };
 };
