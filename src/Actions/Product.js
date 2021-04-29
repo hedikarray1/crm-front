@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useHistory } from "react-router";
-import { SERVER_URL } from "../constants/BackendConstants";
+import { SERVER_URL, WP_JSON } from "../constants/BackendConstants";
 import { productData } from "../Data/ProductData";
 import * as ActionTypes from "./index";
 
@@ -128,6 +128,48 @@ export const ClientGetAllProducts = (auth) => {
       console.log("error :", error);
       dispatch({
         type: ActionTypes.CLIENT_GET_ALL_PRODUCT_FAILURE,
+        payload: { errors: error },
+      });
+    }
+  };
+};
+
+export const AddProduct = (product) => {
+  return async (dispatch) => {
+    //   console.log("in reQUEST GET ALL FEATURES");
+    const token = {
+      key: "ck_2a88c024105b75fccb82d8252bcfe1060286007d",
+      secret: "cs_7debf8ce3c6856df60415ecb2c130c1c6b60f022",
+    };
+console.log("product a ajouter :",product)
+    try {
+      axios
+        .post(
+          WP_JSON +
+            "wc/v3/products?consumer_key=" +
+            token.key +
+            "&consumer_secret=" +
+            token.secret,
+          product
+        )
+        .then((response) => {
+          console.log("add product data :", response);
+          dispatch({
+            type: ActionTypes.WOOCOMMERCE_ADD_PRODUCT_SUCCESS,
+            payload: response,
+          });
+        })
+        .catch((error) => {
+          console.log("error :", error);
+          dispatch({
+            type: ActionTypes.WOOCOMMERCE_ADD_PRODUCT_FAILURE,
+            payload: { errors: error },
+          });
+        });
+    } catch (error) {
+      console.log("error :", error);
+      dispatch({
+        type: ActionTypes.WOOCOMMERCE_ADD_PRODUCT_FAILURE,
         payload: { errors: error },
       });
     }

@@ -74,6 +74,25 @@ export default function Product(state = productState, action = {}) {
         errors: action.payload.errors,
       };
     /******************************************* */
+     case ActionTypes.WOOCOMMERCE_ADD_PRODUCT:
+      return {
+        ...state,
+        loading: true,
+        errors: action.error ? action.payload.errors : null,
+      };
+    case ActionTypes.WOOCOMMERCE_ADD_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        errors: action.error ? action.payload.errors : null,
+      };
+    case ActionTypes.WOOCOMMERCE_ADD_PRODUCT_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        errors: action.payload.errors,
+      };
+    /******************************************* */
     default:
       return state;
   }
